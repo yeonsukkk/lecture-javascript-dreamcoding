@@ -9,12 +9,11 @@ console.clear();
 */
 
 class AdminStaff {
-  #payRate;
   constructor(name, department, hoursPerMonth, payRate) {
     this.name = name;
     this.department = department;
     this.hoursPerMonth = hoursPerMonth;
-    this.#payRate = payRate;
+    this.payRate = payRate;
   }
   get staffInfo() {
     return `${this.name}은 ${this.department} 부서입니다.\n${
@@ -22,7 +21,7 @@ class AdminStaff {
     }시간 근무한 한달 급여는 ${this.calculatePay()}입니다.`;
   }
   calculatePay() {
-    return this.hoursPerMonth * this.#payRate;
+    return this.hoursPerMonth * this.payRate;
   }
 }
 
