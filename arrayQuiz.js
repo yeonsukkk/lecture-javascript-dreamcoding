@@ -18,9 +18,14 @@ console.log('quiz1: ', quiz1(quiz1Arr, '🍓', '🥝'));
 // output: 2
 const quiz2Arr = ['🍌', '🥝', '🍇', '🥝'];
 function quiz2(obj, countEmoji) {
-  let counter = 0;
+  /* let counter = 0;
   obj.map((item) => (item === countEmoji ? ++counter : counter));
-  return counter;
+  return counter; */
+  /* return obj.reduce((count, value) => {
+    value === countEmoji ? ++count : count;
+    return count;
+  }, 0); */
+  return obj.filter((value) => value === countEmoji).length;
 }
 console.log('quiz2: ', quiz2(quiz2Arr, '🥝'));
 
@@ -31,8 +36,8 @@ console.log('quiz2: ', quiz2(quiz2Arr, '🥝'));
 const quiz3Arr1 = ['🍌', '🥝', '🍇'];
 const quiz3Arr2 = ['🍌', '🍓', '🍇', '🍓'];
 function quiz3(obj1, obj2) {
-  const newQuiz3 = obj1.filter((item) => obj2.indexOf(item) !== -1);
-  return newQuiz3;
+  // return obj1.filter((item) => obj2.indexOf(item) !== -1);
+  return obj1.filter((item) => obj2.includes(item));
 }
 
 function quiz3_2(obj1, obj2) {
