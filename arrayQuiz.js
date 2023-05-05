@@ -49,3 +49,12 @@ function quiz3_2(obj1, obj2) {
 }
 console.log('quiz3: ', quiz3(quiz3Arr1, quiz3Arr2));
 console.log('quiz3_2: ', quiz3_2(quiz3Arr1, quiz3Arr2));
+
+// 퀴즈4: 5이상의 숫자들의 평균
+const nums = [3, 16, 5, 25, 4, 34, 21];
+const result = nums
+  .filter((item) => item > 5)
+  .reduce((avg, num, idx, ary) => {
+    return avg + num / ary.length;
+  }, 0);
+console.log(result);
